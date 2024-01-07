@@ -28,9 +28,9 @@ def recommend(item_input):
     recommendation_info = []
     for _, row in recommendations.iterrows():
         item = next(iter(row['consequents']))
-        support = row['support']
-        confidence = row['confidence']
-        recommendation_info.append(f"{item} dengan nilai Support: {support:.3f} dan Confidence: {confidence:.3f}")
+        support = row['support'] * 100
+        confidence = row['confidence'] * 100
+        recommendation_info.append(f"{item} dengan nilai Support: {support:.1f}% dan Confidence: {confidence:.1f}%")
 
     return ', '.join(recommendation_info)
 
