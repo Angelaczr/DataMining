@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rekomendasi Produk</title>
+</head>
+<body>
+    <h2>Masukkan Produk yang Anda Minati</h2>
+    <form action="/recommend" method="post">
+        <input type="text" name="item" required>
+        <button type="submit">Cari Rekomendasi</button>
+    </form>
+
+    {% if recommendations %}
+        <h2>Rekomendasi:</h2>
+        <ul>
+            {% for item in recommendations %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
